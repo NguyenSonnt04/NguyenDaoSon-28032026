@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -28,7 +29,7 @@ app.use('/api/v1/auth', require('./routes/auth'));
 app.use('/api/v1/carts', require('./routes/carts'));
 app.use('/api/v1/upload', require('./routes/upload'));
 //connect
-mongoose.connect('mongodb://localhost:27017/NNPTUD-S4');
+mongoose.connect('mongodb://127.0.0.1:27017/db');
 mongoose.connection.on('connected', function () {
   console.log("connected");
 })
